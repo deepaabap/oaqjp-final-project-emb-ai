@@ -8,7 +8,7 @@ def emotion_detection():
     emotions = {k: v for k, v in response.items() if k != "dominant_emotion"}
     items = [f"'{k}': {v}" for k, v in emotions.items()]
     formatted = ", ".join(items[:-1]) + " and " + items[-1]
-    return "For the given statement, the system response is {formatted}. The dominant emotion is {data['dominant_emotion']}."
+    return f"For the given statement, the system response is {formatted}. The dominant emotion is {response['dominant_emotion']}."
 
 @app.route("/")
 def render_index_page():
